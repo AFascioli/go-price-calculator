@@ -37,7 +37,8 @@ func (job *TaxIncludedPriceJob) Process() {
 	}
 
 	fmt.Println(result)
-	filemanager.WriteJSON("./results.txt", result)
+	job.TaxIncludedPrices = result
+	filemanager.WriteJSON(fmt.Sprintf("./results_%.0f.txt", job.TaxRate*100), result)
 }
 
 func NewTaxIncludedPriceJob(taxRate float64) *TaxIncludedPriceJob {
