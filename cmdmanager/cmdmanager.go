@@ -10,12 +10,12 @@ func New() *CMDManager {
 }
 
 func (cmd CMDManager) ReadLines() ([]string, error) {
-	fmt.Println("Enter your prices, confirm each one pressing ENTER")
+	fmt.Println("enter your prices, confirm each one pressing ENTER")
 
 	var prices []string
 	for {
 		var price string
-		fmt.Print("Price: ")
+		fmt.Print("price: ")
 		fmt.Scan(&price)
 		if price == "0" {
 			break
